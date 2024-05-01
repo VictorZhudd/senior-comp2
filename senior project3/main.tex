@@ -153,7 +153,7 @@ It is easy to follow, so I created my algorithm based on this blog.
 
 
 \section{Methods}
-In the development of a procedural map generator for tabletop gaming sessions, feedback was collected from experienced Dungeon Masters (DMs) through online interviews. These DMs, skilled in world-building and game facilitation, highlighted specific areas for enhancement based on their expertise. A recurrent theme was the request for more complex and modular designs for boss rooms, emphasizing the need for these areas to be both visually impressive and narrative-rich. Following initial test plays, the importance of such features became evident, underlining the boss rooms' role in enhancing gameplay and storytelling. Furthermore, one interviewee suggested incorporating extensive details directly onto the maps to reduce the necessity of consulting rulebooks during sessions. Unanimously, all participants expressed a desire for the tool to facilitate a stronger narrative connection among the dungeon's elements, including monsters, obstacles, NPCs, and the overall environment. Consequently, the project was structured into two distinct components: the comprehensive dungeon map and the specialized boss room map, each tailored to address the specific feedback and requirements identified by the DMs.
+In the development of a procedural map generator for tabletop gaming sessions, feedback was collected from experienced GameHost through online interviews. These GameHosts, skilled in world-building and game facilitation, highlighted specific areas for enhancement based on their expertise. A recurrent theme was the request for more complex and modular designs for boss rooms, emphasizing the need for these areas to be both visually impressive and narrative-rich. Following initial test plays, the importance of such features became evident, underlining the boss rooms' role in enhancing gameplay and storytelling. Furthermore, one interviewee suggested incorporating extensive details directly onto the maps to reduce the necessity of consulting rulebooks during sessions. Unanimously, all participants expressed a desire for the tool to facilitate a stronger narrative connection among the dungeon's elements, including monsters, obstacles, NPCs, and the overall environment. Consequently, the project was structured into two distinct components: the comprehensive dungeon map and the specialized boss room map, each tailored to address the specific feedback and requirements identified by the GameHosts.
 
 The initial phase of the procedural map generator's development focused on creating the overall dungeon map. This process began with generating a basic framework consisting of squares connected by lines, with each square designated to represent a room. The assignment of rooms to squares was governed by specific constraints designed to balance gameplay and enhance player experience.
 
@@ -173,7 +173,7 @@ In the development of the boss room map, an emphasis was placed on further custo
 
 To structure these immersive environments effectively, specific constraints were applied to the placement of rooms within the boss map. Key requirements included positioning the throne room as far from the entrance as possible to symbolize the culmination of the players' journey through the dungeon. Guard rooms were mandated to be located at the perimeter of the map, serving as the first line of defense. Furthermore, the sleeping area was to be situated adjacent to the throne room, with the bathroom in close proximity, reflecting a logical arrangement of personal spaces. These constraints were designed to ensure a coherent and realistic layout that contributes to the narrative depth and strategic complexity of the final encounter.
 
-Customization remains a cornerstone of the boss room generator, allowing Game Hosts to adapt each area and constraint to their preferences. This flexibility enables the creation of tailored experiences that align with the Game Hosts' vision for their campaign, ensuring that each boss room is not only a challenge but also a story-rich environment that enhances the overall gameplay experience.
+Customization remains a cornerstone of the boss room generator, allowing Game Hosts to adapt each area and constraint to their preferences. This flexibility enables the creation of tailored experiences that align with the Game Hosts' vision for their campaign, ensuring that each boss room is not only a challenge but also a story-rich environment that enhances the overall gameplay experience. Watabou's Procgen Arcana does not contain this feature. In Watabou's Procgen Arcana, each room is relatively the same size. There is no emphasis on the  end of the game -"boss room." In Rouge, since it is an ancient game, rooms are just randomized Rectangles with dots in them. These are outdated methods.
 
 \begin{figure}[h]
 \centering
@@ -190,141 +190,85 @@ The \textit{Random Boss Room Generator} focuses on spatial hierarchy and themati
 \caption{Example of a Boss Room Layout}
 \label{fig:boss-room}
 \end{figure}
-
+the game also comes with three pre-set gaming content. Each set of the game contains traps, monsters, and treasure.  When the map is generated, it will show a monster, trap, and other elements next to the map and provide a description of the element, such as how hard the element is, a description, and loot.  The final boss is also different in each set. One is the hibernating red dragon, one is dark elf siblings, and the final one is the goblin king. Each set of monsters is unique. It is designed so each set of playthroughs is unique, allowing the players to experience new challenges each time they explore the dungeon. The monsters and traps are designed to connect to the theme. These three sets of monsters and traps are set in the theme of the underground dungeons. According to the lore provided in the Monster Manual, most monsters in the set dwell in the underground.   
 
 
 \section{Evaluation Metrics}
 
-These are the evaluation metrics I created on the first day I designed the project.I think these are fitting for the project.
+These are the evaluation metrics I created on the first day I designed the project. #I think these are suitable for the project.
 
 \begin{enumerate}
-    \item \textbf{Good Storyline (Who What Why):}
+    \item \textbf{Good Storyline (Who, What Why):}
     
-    \textit{Importance:} A good storyline is crucial for engaging players in the game world. It provides context, purpose, and motivation for their actions. A well-crafted narrative can make the gameplay more immersive and enjoyable.\cite{reddit_dnd_campaign_fun}
+    \textit{Importance:}  A good storyline is crucial for engaging players in the game world. It provides context, purpose, and motivation for their actions.	A well-crafted narrative can make the gameplay more immersive and enjoyable, which is measured through GameHost and player feedback on the storyline’s integration and immersive quality. A good storyline should include high player agency so the player can engage more. It also should contain social interaction between players and with the game.. \cite{reddit_dnd_campaign_fun}
     
-    \item \textbf{Good Adversary (Motivation, Theme, Difficulty, Variation):}
+    \item \textbf{Good Adversary  Theme, Difficulty, Variation):}
     
-    \textit{Importance:} The adversary or antagonist in a game adds challenge and conflict, making the gameplay interesting. Their motivation and theme contribute to the depth of the story. The difficulty and variation ensure that encounters with the adversary remain engaging and not repetitive.\cite{reddit_dnd_campaign_fun}
-    
-    \item \textbf{Good NPC (Background, Personality, Function):}
-    
-    \textit{Importance:} Non-player characters (NPCs) play a significant role in shaping the game world. Their backgrounds and personalities add richness to the narrative. Their functions can range from providing information to offering quests or trading, enhancing the player's experience.\cite{reddit_dnd_campaign_fun}
-    
+    \textit{Importance:} The adversary or antagonist in a game adds challenge and conflict, making the gameplay interesting. Their motivation and theme from preset gameplay contribute to the depth of the story. The player will decide if the game has the right amount of difficulty and variation by giving their opinion. A good adversary not only needs to serve as opponent but also allows players to grow from them and provide some sort of social or emotional value.  \cite{reddit_dnd_campaign_fun}    
     \item \textbf{Good Resolution (Rewarding or not, Meaning):}
     
-    \textit{Importance:} The resolution of the hero's journey is what players work toward. A rewarding resolution provides a sense of accomplishment and satisfaction, motivating players to continue or replay the game. The meaning or impact of the resolution can leave a lasting impression on players.\cite{reddit_dmacademy_oneshot}
-    
-    \item \textbf{Well-Constructed (What will the map look like, Theme, Difficulty):}
-    
-    \textit{Importance:} A well-constructed map is essential for navigation and exploration within the game. The map's theme sets the tone and atmosphere, enhancing immersion. Difficulty ensures that players are appropriately challenged, maintaining their interest.\cite{reddit_dmacademy_oneshot}
+    \textit{Importance:} The adversary or antagonist in a game adds challenge and conflict, making the gameplay interesting. Their motivation and theme from preset gameplay contribute to the depth of the story. The player will decide if the game has the right amount of difficulty and variation by giving their opinion. A good adversary not only needs to serve as an opponent but also allows players to grow from them and provide some sort of social or emotional value \cite{reddit_dmacademy_oneshot}
+    \item \textbf{Good Resolution (Rewarding or does  have meaning):}
+    \textit{Importance:}The resolution of the hero’s journey is what players work toward. A rewarding resolution provides a sense of accomplishment and satisfaction, motivating players to continue or replay the game. The meaning or impact of the resolution can leave a lasting impression on players. A good resolution should be smooth instead of forced. It does not necessarily need to surprise players or impress them, but it should be a wrap-up of the game session. These criteria were determined by interviewing both GameHost and the player
+.
+
+
 \end{enumerate}
 
-A rewarding resolution provides a sense of achievement and closure, motivating players to complete the game and potentially play it again.
-The importance of these metrics is justified in the context of game design literature, where a compelling narrative, challenging gameplay, and immersive world-building are often considered essential elements for successful games. These metrics help ensure that your algorithm generates game scenarios that are enjoyable, engaging, and memorable for players.
-
+ 
 
 
 \section{Evaluation Results and Discussion}
+My methodological approach involved the development of algorithms for procedural dungeon and boss room generation, incorporating feedback from GameHost to ensure the created environments meet gameplay and narrative standards. Initial interviews with five GameHosts via Discord provided foundational insights that shaped algorithm development. Key focus areas included enhancing narrative depth, ensuring logical room connectivity, and maintaining a balance of challenge and exploration within the generated maps.
 
-\subsection{Methodological Approach}
-
-My methodological approach involved the development of algorithms for procedural dungeon and boss room generation, incorporating feedback from Dungeon Masters (DMs) to ensure the created environments meet gameplay and narrative standards. Initial interviews with five DMs via Discord provided foundational insights that shaped algorithm development. Key areas of focus included enhancing narrative depth, ensuring logical room connectivity, and maintaining a balance of challenge and exploration within the generated maps.
-
-\subsection{Evaluation Metrics}
-
-To assess the effectiveness of my procedural generation algorithms, I established the following evaluation metrics based on DM feedback and game design literature:
-
-\begin{enumerate}
-    \item \textbf{Narrative Engagement:} Measured through DM and player feedback on the storyline's integration and immersive quality.
-    \item \textbf{Adversary Design:} Evaluated by the variety and thematic alignment of challenges, as reported by playtest participants.
-    \item \textbf{NPC Development:} Assessed through observations of player-NPC interactions and the NPCs' impact on game progression.
-    \item \textbf{Map Construction Quality:} Determined by examining the logical arrangement of rooms and ease of navigation within the generated environments.
-\end{enumerate}
 
 \subsection{Evaluation Process and Results}
+Good Storyline
+         After interviewing GameHost and the players after the playtesting using the dragon preset, the players considered random-generated adventures similar to the past GameHost-designed games. The GameHost expressed that the characters, monsters, and trap made sense in his playthrough, but he did not think a short game like the pre-set game needed any storyline.
 
-\textbf{Pre-Playtesting Interviews:} Prior to playtesting, interviews with DMs highlighted concerns regarding content depth and connectivity within the maps. They have point out that I need a more complex map and create an  of monster and traps. Adjustments were made accordingly, focusing on room descriptions and connectivity logic.
 
-\textbf{Playtesting Sessions:} Engaging student DMs and players in playtesting sessions revealed the maps' immersive quality and narrative engagement. Feedback emphasized the need for more logical room arrangements and enhanced narrative elements.
+Good Adversary
+       The two primary sources of the adversary are the room positions and the pre-set games. The room position is determined by rules, such as the weak monster or treasure following the strong monster, etc. The pre-set game comes with pre-set monsters, traps, and puzzles. The player was able to go through each challenge in 5 minutes. According to the GameHost, this is a regular time for players to get through a challenge in a human-made game session. As for the players, they reflect that the monsters’ puzzles and traps are relatively easy, but they feel like they have faced challenges.
 
-\textbf{Feedback Integration:} Based on playtesting feedback, further refinements were made to address room arrangement consistency and the integration of narrative elements. The adjustments aimed at improving gameplay strategy and narrative depth.
 
-\textbf{Quantitative Results:} Although specific quantitative metrics such as player engagement time and NPC interaction rates were not initially established, qualitative feedback suggested high levels of engagement and satisfaction with the narrative and gameplay elements.
+Good Resolution
+       In the end, after the player feats one of the bosses in the pre-set gameplay, they feel they have defeated a harder enemy. GameHost also gave the player a conclusion based on defeating the boss dragon. After interviewing the players, they felt satisfied.
+
+There are many things that need to be improved, such as the adaptive difficulty level. There are many different kinds of players. Some would like to max out their fighting abilities. Some just want to roleplay. If there is a system that judges the players by their ability to combat instead of their level in-game, that would be great.
+
+
+.
 
 
 \section{Ethical Considerations and Implementation}
+These standards are derived from multiple game developer statements and industry standards, such as The International Game Developers Association,
 
 \subsection{Fairness and Inclusivity}
 \begin{itemize}
-    \item my algorithms incorporate \textbf{fair randomization} techniques to ensure that the generated dungeons do not favor or disadvantage any player. This was achieved by using balanced randomization functions and regularly testing outcomes for bias.
-    \item I focused on \textbf{accessibility} by designing user interfaces that are compatible with screen readers and providing descriptions in text format to aid visually impaired players.
-    \item To promote \textbf{inclusivity}, the content generation algorithms were designed to avoid stereotypes and ensure a wide representation of characters and scenarios, fostering a positive gaming environment for all.
+    \item : My algorithm generates maps randomly with contraction randomization functions and regularly tests outcomes for bias.
+    \item To promote \textbf{inclusivity}, the content generation algorithms were designed to avoid stereotypes and ensure a wide representation of characters and scenarios, fostering a positive gaming environment for all.\cite{igda2019ethics}
 \end{itemize}
 
 \subsection{Player Agency}
 \begin{itemize}
-    \item \textbf{Transparency} about the procedural generation process is provided through documentation and in-game explanations, giving players and DMs insight into how dungeons are created.
-    \item I have enabled \textbf{customization} options allowing DMs to modify algorithm parameters to suit their campaign needs, enhancing player agency in shaping their adventure.
+    \item \textbf{Transparency} about the procedural generation process is provided through documentation and in-game explanations, giving players and DMs insight into how dungeons are created.   Customization options are enabled, allowing GameHosts to modify algorithm parameters to suit their campaign needs, enhancing player agency in shaping their adventure.\cite{bourke2017morality_ethics_rpg}
 \end{itemize}
 
-\subsection{Intellectual Property}
-\begin{itemize}
-    \item To respect \textbf{intellectual property}, all third-party assets are used with permission or are properly attributed, and I encourage original content creation within the TTRPG community.
-\end{itemize}
 
 \subsection{Data Privacy}
 \begin{itemize}
-    \item \textbf{Data protection} measures are implemented to ensure that any collected data, such as player preferences or custom dungeon settings, are securely stored and handled in compliance with data protection laws.
+    \item \textbf{Data protection} measures are implemented to ensure that any collected data, such as player preferences or custom dungeon settings, are securely stored in the local computer.\cite{igda2019ethics}
 \end{itemize}
 
 \subsection{Accountability and Continuous Improvement}
 \begin{itemize}
     \item I am committed to \textbf{accountability}, with mechanisms in place for reporting and addressing biases, bugs, or ethical concerns raised by the community.
-    \item I engage in \textbf{continuous improvement} by updating I algorithms based on player and DM feedback and staying informed about ethical standards within the gaming community.
+    \item I engage in \textbf{continuous improvement} by updating algorithms based on players' and GameHost's feedback and staying informed about ethical standards within the gaming community.\cite{igda2019ethics}
 \end{itemize}
 
 \section{Conclusion}
-Through these measures, my project aims to deliver a procedurally generated dungeon and boss room experience that is ethically responsible, inclusive, and enjoyable for the TTRPG community. I believe that considering these ethical aspects is crucial for the sustainable and positive development of gaming technologies.
-
-
-\section{Conclusion}
-
-In conclusion, the project of developing procedural dungeon and boss room generators for tabletop role-playing games (TTRPGs) has yielded promising results, addressing several critical aspects of game design and enhancing the overall player experience. I have focused on creating immersive, balanced, and ethical gaming environments throughout the project. As I reflect on the achievements and challenges encountered during this endeavor, it is clear that procedural generation has the potential to impact TTRPGs significantly and positively.
-
-Key Achievements:
-1. **Enhanced Gameplay**: The procedural dungeon generator has successfully created diverse and strategically structured dungeon layouts, offering players a more engaging and challenging experience. Including dynamic room, captions has added depth to storytelling, while the boss room generator has improved narrative coherence and tactical gameplay.
-
-2. **Fairness and Inclusivity**: Ethical considerations have been central to my project, ensuring that generated content is fair, inclusive, and appropriate for diverse audiences. This approach promotes a welcoming and respectful gaming environment.
-
-3. **Player Agency**: By allowing players and Dungeon Masters (DMs) to customize algorithms and adjust parameters,  I have empowered them to tailor their TTRPG adventures to their preferences. Transparency in procedural generation further enhances player agency, fostering a sense of control and immersion.
-
-4. **Content Appropriateness**: The project has prioritized age-appropriate content, trigger warnings, and cultural sensitivity, making TTRPGs accessible and enjoyable for many players. This approach helps prevent potentially uncomfortable or distressing experiences. All the players and the DMs are comfortable with the content I created.
-
-5. **Ethical Considerations**: I have proactively addressed issues related to intellectual property, data privacy, and accountability, ensuring that the project aligns with ethical standards and legal requirements to my players and DMs.
-\section{Future Work}
-While the project has achieved several milestones, there is ample room for further development and improvement in the field of procedural dungeon and boss room generation for TTRPGs:
-
-1. **Advanced Algorithms**: Future work can explore more sophisticated algorithms to create even more complex and dynamic dungeon layouts. Incorporating decision trees, machine learning, or neural networks may enable generators to adapt to player preferences and behaviors during gameplay.
-
-2. **Multiplayer Integration**: Integrating multiplayer capabilities, allowing multiple players or DMs to collaboratively or competitively create and explore procedurally generated dungeons, can enhance the social aspect of TTRPGs.
-
-3. **Enhanced Graphics and Visualization**: Improving the graphical representation of generated dungeons, potentially through the integration of graphic design software or 3D modeling, can provide a more immersive visual experience.
-
-4. **Natural Language Processing**: Incorporating natural language processing to generate detailed descriptions of rooms, NPCs, and encounters could further enrich storytelling and reduce the need for manually entering room descriptions.
-
-5. **Player Feedback Mechanisms**: Developing systems for players to provide feedback on generated content and gameplay experiences can help fine-tune algorithms and identify areas for improvement.
-
-6. **Expansion into Other TTRPG Systems**: Adapting the procedural generation tools to work seamlessly with various TTRPG systems beyond Dungeons & Dragons, such as Pathfinder or Call of Cthulhu, would broaden the project's applicability.
-
-7. **Educational Applications**: Exploring how procedural generation can be used for educational purposes, such as teaching game design or history through TTRPG scenarios, can open up new avenues for the project.
-
-8. **Dynamic Difficulty Scaling**: Implementing mechanisms that dynamically adjust dungeon difficulty based on player skill, character level, or party composition can create more tailored and challenging experiences.
-
-9. **Storyline Integration**: Integrating procedural generation into overarching campaign storylines, allowing generated content to align more closely with the narrative, can enhance immersion and coherence.
-
-10. **Cross-Platform Compatibility**: Ensuring that the procedural generation tools are compatible with various platforms, including virtual tabletop systems and mobile devices, can broaden their accessibility.
-
-In summary, the project has made significant strides in developing procedural dungeon and boss room generators for TTRPGs, emphasizing fairness, inclusivity, and ethical considerations. The potential for growth and innovation in this field is substantial, offering exciting opportunities to enhance TTRPG experiences for players and DMs. By continuing to refine algorithms, expand capabilities, and embrace emerging technologies, I can look forward to a future where procedurally generated content plays an even more significant role in tabletop role-playing games.
+Through these measures, my project aims to deliver a procedurally generated dungeon that is ethically responsible, inclusive, and enjoyable for the TTRPG community. I believe that considering these ethical aspects is crucial for the sustainable and positive development of gaming technologies.
+In conclusion, the project of developing procedural dungeon and boss room generators for tabletop role-playing games (TTRPGs) has yielded promising results, addressing several critical aspects of game design and enhancing the overall player experience. I have focused on creating immersive, balanced, and ethical gaming environments throughout the project. As I reflect on the achievements and challenges encountered during this endeavor, it is clear that procedural generation has the potential to impact TTRPGs significantly and positively. the project has made significant strides in developing procedural dungeon and boss room generators for TTRPGs, emphasizing fairness, inclusivity, and ethical considerations. The potential for growth and innovation in this field is substantial, offering exciting opportunities to enhance TTRPG experiences for players and GameHosts. By continuing to refine algorithms, expand capabilities, and embrace emerging technologies, I can look forward to a future where procedurally generated content plays an even more significant role in tabletop role-playing games.
 
 
 \section{Timeline}
